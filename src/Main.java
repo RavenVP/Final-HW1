@@ -13,7 +13,7 @@ public class Main {
         Employee worker7 = new Employee("Юлия", "Денисовна", "Мендалёва", 4, 98623);
         Employee worker8 = new Employee("Мария", "Артуровна", "Глазкова", 4 , 46587);
         Employee worker9 = new Employee("Андрей", "Вадимович", "Скрипка", 5 , 235845);
-        Employee worker10 = new Employee("Владислав", "Григорьевич", "Власов", 5 , 42374);
+        Employee worker10 = new Employee("Владислав", "Григорьевич", "Власов", 5 , 23423);
 
         worker[0] = worker1;
         worker[1] = worker2;
@@ -72,8 +72,13 @@ public class Main {
         return maxResult;
     }
     public static float avgSalary() {
-        float a = worker.length;
-        return totalSalary() / a;
+        float avgSal = 0;
+        int counter = 0;
+        for (Employee employee : worker) {
+            avgSal = avgSal + employee.getSalary();
+            counter++;
+        }
+        return avgSal / counter;
     }
 
 }
