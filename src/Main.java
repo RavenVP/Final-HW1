@@ -72,13 +72,14 @@ public class Main {
         return maxResult;
     }
     public static float avgSalary() {
-        float avgSal = 0;
+        int avgSal = 0;
         int counter = 0;
         for (Employee employee : worker) {
-            avgSal = avgSal + employee.getSalary();
-            counter++;
+            if (employee != null) {
+                avgSal = avgSal + employee.getSalary();
+                counter++;
+            }
         }
         return avgSal / counter;
     }
-
 }
